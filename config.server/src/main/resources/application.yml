@@ -1,0 +1,32 @@
+server:
+  port: ${PORT:8090}
+
+spring:
+  application:
+    name: config-server
+  # local option
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+        # local option
+#        native:
+#          searchLocations: ${HOME}/Documents/study/microservices/configs
+        # git option
+        git:
+          uri: https://github.com/
+          searchPaths: configs
+          username: username
+          password: password
+        monitor:
+          github:
+            enabled: true
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    hostname: localhost
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:{server.port}

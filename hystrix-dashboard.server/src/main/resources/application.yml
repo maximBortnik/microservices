@@ -1,0 +1,21 @@
+server:
+  port: ${PORT:9090}
+
+spring:
+  application:
+    name: hystrix-dashboard-server
+  # for using hystrix dashboard with turbine stream
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+
+turbine:
+  appConfig: client-service
+  clusterNameExpression: "'default'"

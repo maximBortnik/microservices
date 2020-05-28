@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:0}
+spring:
+  application:
+    name: employee-service
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    hostname: localhost
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:{server.port}
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+# best way to unregister service from DiscoveryClient
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+      sensitive: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"

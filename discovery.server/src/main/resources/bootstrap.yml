@@ -1,0 +1,14 @@
+# Discovery First Bootstrap
+server:
+  port: ${PORT:8761}
+
+eureka:
+  server:
+    enableSelfPreservation: false
+    evictionIntervalTimerInMs: 3000
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  instance:
+    hostname: localhost
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:{server.port}

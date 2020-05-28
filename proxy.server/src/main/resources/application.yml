@@ -1,0 +1,36 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: proxy-server
+
+zuul:
+  ignoredServices: '*'
+  prefix: /api
+  routes:
+    client-service:
+      path: /client/**
+
+ribbon:
+  reatTimeout: 30000
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+
+# best way to unregister service from DiscoveryClient
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+
+# to disable endpoint security for test purposes
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: routes, filters

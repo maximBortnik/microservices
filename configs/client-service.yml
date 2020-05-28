@@ -1,0 +1,42 @@
+server:
+  port: ${PORT:0}
+# for using hystrix dashboard with turbine stream
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    hostname: localhost
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:${server.port}
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+# By default, all endpoints but /shutdown are enabled. Only the /health and /info endpoints are exposed by default.
+# Use "*" to include or to exclude all endpoints.
+# Exposing Actuator endpoints over HTTP
+management:
+  security:
+    enabled: false
+  endpoint:
+    shutdown:
+      enabled: true
+      sensitive: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# to enable hystrix fallback with feign
+feign:
+  hystrix:
+    enabled: false
+
+sample:
+  string: Client App
+  int: 10  
