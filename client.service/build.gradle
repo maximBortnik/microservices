@@ -32,14 +32,21 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-	// to consume events from message broker for refreshing cloud config
-	implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+	// to consume events from message broker for refreshing cloud config automatocally
+	//implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
 	//for using hystrix dashboard with turbine stream
-	implementation 'org.springframework.cloud:spring-cloud-netflix-hystrix-stream'
-	implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
+	//implementation 'org.springframework.cloud:spring-cloud-netflix-hystrix-stream'
+	//implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit'
+
+	// to use AMQPAppender and message broker
+	//implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	// to use LogstashTCPAppender
+	//implementation 'net.logstash.logback:logstash-logback-encoder:4.11'
 
 	implementation 'io.springfox:springfox-swagger2:2.8.0'
 	implementation 'io.springfox:springfox-swagger-ui:2.8.0'

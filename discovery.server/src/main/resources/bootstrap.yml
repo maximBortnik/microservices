@@ -11,4 +11,4 @@ eureka:
     fetchRegistry: false
   instance:
     hostname: localhost
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:{server.port}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:${server.port}

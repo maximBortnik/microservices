@@ -1,11 +1,11 @@
 server:
-  port: ${PORT:0}
+  port: ${PORT:8080}
 # for using hystrix dashboard with turbine stream
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
 
 eureka:
   client:
@@ -39,4 +39,4 @@ feign:
 
 sample:
   string: Client App
-  int: 10  
+  int: 10 

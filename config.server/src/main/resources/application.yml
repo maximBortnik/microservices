@@ -5,23 +5,23 @@ spring:
   application:
     name: config-server
   # local option
-#  profiles:
-#    active: native
+  profiles:
+    active: native
   cloud:
     config:
       server:
         # local option
-#        native:
-#          searchLocations: ${HOME}/Documents/study/microservices/configs
+        native:
+          searchLocations: ${HOME}/Documents/study/microservices/configs
         # git option
-        git:
-          uri: https://github.com/
-          searchPaths: configs
-          username: username
-          password: password
-        monitor:
-          github:
-            enabled: true
+#        git:
+#          uri: https://github.com/
+#          searchPaths: configs
+#          username: username
+#          password: password
+#        monitor:
+#          github:
+#            enabled: true
 
 eureka:
   client:
@@ -29,4 +29,4 @@ eureka:
     fetchRegistry: true
   instance:
     hostname: localhost
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:{server.port}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:${server.port}

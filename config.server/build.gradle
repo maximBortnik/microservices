@@ -24,8 +24,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-config-server'
 	// to consume events from message broker for refreshing cloud config
-	implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
-	implementation 'org.springframework.cloud:spring-cloud-config-monitor'
+	//implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+	//implementation 'org.springframework.cloud:spring-cloud-config-monitor'
+	
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 }
 
