@@ -1,0 +1,11 @@
+server:
+  port: ${PORT:9999}
+  servlet:
+    context-path: /uaa
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=oauth2
+    username: oauth2
+    password: oauth2
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

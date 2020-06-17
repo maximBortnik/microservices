@@ -35,7 +35,7 @@ management:
 # to enable hystrix fallback with feign
 feign:
   hystrix:
-    enabled: false
+    enabled: true
 
 sample:
   string: Client App

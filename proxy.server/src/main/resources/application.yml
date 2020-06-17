@@ -11,6 +11,10 @@ zuul:
   routes:
     client-service:
       path: /client/**
+    auth-service:
+      path: /uaa/**
+      stripPrefix: true
+      sensitiveHeaders:
 
 ribbon:
   reatTimeout: 30000
