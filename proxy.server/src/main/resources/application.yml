@@ -13,7 +13,7 @@ zuul:
       path: /client/**
     auth-service:
       path: /uaa/**
-      stripPrefix: true
+      stripPrefix: false
       sensitiveHeaders:
 
 ribbon:
