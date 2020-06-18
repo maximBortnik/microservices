@@ -1,6 +1,7 @@
 package com.microservices.authorization.server.model;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Entity;
@@ -32,7 +33,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptySet();
+        return Collections.singleton(new SimpleGrantedAuthority("READ"));
     }
 
     @Override
